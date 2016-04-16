@@ -78,7 +78,7 @@ gulp.task('sass', function() {
 
 //build files for creating a dist release
 gulp.task('build:dist', ['clean'], function(cb) {
-  runSequence(['jshint', 'build', 'copy', 'copy:assets', 'images', 'test:unit'], 'html', cb);
+  runSequence(['jshint', 'build', 'copy', 'copy:assets', 'images'], 'html', cb);
 });
 
 //build files for development
@@ -187,10 +187,6 @@ gulp.task('serve:tdd', function(cb) {
 //run the server after having built generated files, and watch for changes
 gulp.task('serve', ['build'], function() {
   browserSync({
-    port: config.port,
-    ui: {
-      port: config.uiPort
-    },
     notify: false,
     logPrefix: pkg.name,
     server: ['build', 'client']
@@ -206,10 +202,6 @@ gulp.task('serve', ['build'], function() {
 //run the app packed in the dist folder
 gulp.task('serve:dist', ['build:dist'], function() {
   browserSync({
-    port: config.port,
-    ui: {
-      port: config.uiPort
-    },
     notify: false,
     server: [config.dist]
   });
