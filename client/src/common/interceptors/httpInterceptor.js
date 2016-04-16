@@ -3,19 +3,17 @@
 
   function httpInterceptor($q, $log) {
     return {
-      request: function(config) {
-        return config;
-      },
+
       requestError: function(rejection) {
-        $log.debug(rejection);
+        $log.debug('requestError: ', rejection);
         return $q.reject(rejection);
       },
       response: function(response) {
-        $log.debug('response: ', response);
+        $log.debug('httpInterceptor.response: ', response);
         return response;
       },
       responseError: function(rejection) {
-        $log.debug(rejection);
+        $log.debug('responseError: ', rejection);
         return $q.reject(rejection);
       }
     };

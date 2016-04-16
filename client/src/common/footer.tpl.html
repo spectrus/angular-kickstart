@@ -1,17 +1,30 @@
 <div class="pure-g">
   <div class="pure-u-1 text-center">
-    <p>&copy; 2014 - <a href="http://alessandro.arnodo.net">Alessandro Arnodo.</a>
+    <p>2016</p>
   </div>
-  <div class="pure-u-1 text-center">
-    <ul class="hlist">
-      <li><a target="_blank" href="http://twitter.com/vesparny">twitter</a>
-      </li>
-      <li><a target="_blank" href="https://plus.google.com/+AlessandroArnodo">g+</a>
-      </li>
-      <li><a target="_blank" href="http://www.linkedin.com/in/alessandroarnodo">LinkedIn</a>
-      </li>
-      <li><a target="_blank" href="https://github.com/vesparny/angular-kickstart">GitHub</a>
-      </li>
-    </ul>
-  </div>
+
 </div>
+<dialog class="mdl-dialog">
+  <div class="mdl-dialog__content">
+    <p>
+      You are not logged in.
+    </p>
+  </div>
+  <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+    <button type="button" class="mdl-button">Agree</button>
+    <button type="button" class="mdl-button close">Disagree</button>
+  </div>
+</dialog>
+<script>
+  var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('.show-modal');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showModalButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>

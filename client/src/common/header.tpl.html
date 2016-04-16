@@ -1,9 +1,14 @@
-<div class="pure-menu pure-menu-open pure-menu-horizontal">
+<div class="pure-menu pure-menu-open pure-menu-horizontal" ng-controller="HeaderCtrl">
   <a class="pure-menu-heading" href="">angular-kickstart <span app-version></span></a>
   <ul>
     <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.home">{{ 'home' | uppercase }}</a>
     </li>
     <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.getting-started">{{ 'getting started' | uppercase }}</a>
     </li>
+    <li ng-if="!currentUser" ui-sref-active="pure-menu-selected"><a href ui-sref="root.login">{{ 'login' | uppercase }}</a>
+    </li>
+    <li ng-if="currentUser" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">{{ 'logout' | uppercase }}</a>
+    </li>
   </ul>
+  <span ng-if="currentUser" style="float: right; padding:.5em;">Welcome, {{ currentUser.firstName }}</span>
 </div>

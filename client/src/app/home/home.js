@@ -34,5 +34,5 @@
 
   angular.module('home', [])
     .config(config)
-    .controller('HomeCtrl', HomeCtrl);
+    .controller('HomeCtrl',HomeCtrl);
 })();

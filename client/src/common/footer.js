@@ -2,7 +2,7 @@
   'use strict';
 
   function footerCtrl($log) {
-    $log.debug('Footer loaded');
+    // $log.debug('Footer loaded');
   }
 
   angular.module('common.footer', [])
