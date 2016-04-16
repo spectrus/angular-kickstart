@@ -39,7 +39,7 @@
         .then(
         function (data, status, headers, config) {
           console.log('logged in, returned: ', data);
-          $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+          // $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
           // members.results = 'You are in.';
           // loadObjects();
           var usr_obj = {};

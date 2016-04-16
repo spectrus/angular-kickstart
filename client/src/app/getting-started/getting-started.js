@@ -34,7 +34,7 @@
       start.isLoggedIn = false;
       start.objectData = '{}';
       start.results = 'Not connected to Backand yet';
-      loadObjects();
+      //loadObjects(); // this generates an error when not logged in
     }());
 
 
